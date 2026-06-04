@@ -46,17 +46,17 @@ const { title, description, image } = Astro.props
 <meta property='twitter:image' content={new URL(image, Astro.url)} />
 
 <!-- Theme selector scripts -->
-<script is:inline>
-  // Get stored theme or default to light
+<script define:vars={{ lightTheme: template.lightTheme }}>
+  // Get stored theme or default to the site theme.
   const getStoredTheme = () => {
-    return localStorage.getItem('theme') || 'light';
+    return localStorage.getItem('theme') || lightTheme;
   }
 
-  // Apply theme immediately to prevent flash
+  // Apply theme immediately to prevent flash.
   const theme = getStoredTheme();
   document.documentElement.setAttribute('data-theme', theme);
 
-  // Re-apply theme after navigation
+  // Re-apply theme after navigation.
   document.addEventListener('astro:after-swap', () => {
     const currentTheme = getStoredTheme();
     document.documentElement.setAttribute('data-theme', currentTheme);

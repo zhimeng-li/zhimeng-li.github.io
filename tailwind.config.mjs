@@ -2,11 +2,41 @@
 export default {
     content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
     theme: {
-        extend: {},
+        extend: {
+            colors: {
+                academic: {
+                    background: "#FAF9F6",
+                    text: "#1F2933",
+                    muted: "#6B7280",
+                    accent: "#286DC0",
+                    border: "#E5E7EB",
+                },
+            },
+        },
     },
     plugins: [require("@tailwindcss/typography"), require("daisyui")],
     daisyui: {
         themes: [
+            {
+                academic: {
+                    "primary": "#286DC0",
+                    "primary-content": "#FFFFFF",
+                    "secondary": "#3A5F7D",
+                    "secondary-content": "#FFFFFF",
+                    "accent": "#286DC0",
+                    "accent-content": "#FFFFFF",
+                    "neutral": "#1F2933",
+                    "neutral-content": "#FAF9F6",
+                    "base-100": "#FAF9F6",
+                    "base-200": "#F4F2EE",
+                    "base-300": "#E5E7EB",
+                    "base-content": "#1F2933",
+                    "info": "#3A5F7D",
+                    "success": "#3F7C59",
+                    "warning": "#B7791F",
+                    "error": "#B91C1C",
+                },
+            },
             "light",
             "dark",
             "cupcake",

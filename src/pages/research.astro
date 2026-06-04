@@ -1,69 +1,58 @@
 ---
-import Layout from "@/layouts/Layout.astro";
-import { profile } from "@/settings";
-import BetterIcon from "@/components/ui/BetterIcon.astro";
-import List from "@/components/ui/List.astro";
-import {RESEARCH_ICONS} from "@/data/researchIcons";
+import Layout from '@/layouts/Layout.astro'
 
-const { research_areas } = profile;
+const researchSections = [
+	{
+		title: 'Emotion segmentation',
+		description: [
+			'This placeholder section can describe research on how people parse continuous behavior, bodily information, and social context into meaningful emotional moments.',
+			'Future text can explain the guiding questions and methods used to study emotion perception without listing unconfirmed findings, sample sizes, datasets, or paper titles.',
+		],
+	},
+	{
+		title: 'Cross-cultural emotion perception',
+		description: [
+			'This placeholder section can describe interests in how emotion perception is shaped by cultural contexts, social expectations, and shared interpretive practices.',
+			'It should later be replaced with specific, verified project descriptions while avoiding unsupported claims about cultural differences or generalizability.',
+		],
+	},
+	{
+		title: 'Emotion concepts and language',
+		description: [
+			'This placeholder section can describe work on how language and emotion concepts help people organize affective experience and infer what others are feeling.',
+			'Future content can mention confirmed behavioral, text-analytic, or conceptual approaches when those details are ready for public presentation.',
+		],
+	},
+	{
+		title: 'Empathy and intergroup understanding',
+		description: [
+			'This placeholder section can describe interests in how people understand and respond to others’ emotional experiences across social boundaries.',
+			'Later revisions can connect this area to social perception, social inference, and empathy while keeping sensitive participant, student, or collaborator details private.',
+		],
+	},
+]
 ---
 
-<Layout title="Research | Dr. Marie Curie">
-  <div class="prose max-w-none">
-    <h1 class="text-3xl font-bold mb-8">Research Statement</h1>
+<Layout title='Zhimeng Li | Research'>
+	<section class='mb-12 max-w-3xl'>
+		<p class='eyebrow'>Research</p>
+		<h1 class='mt-4 text-4xl font-semibold tracking-[-0.03em] text-academic-text md:text-5xl'>Research areas</h1>
+		<p class='mt-5 text-lg leading-8 text-academic-muted'>
+			This first-draft page outlines broad research directions in affective science and social psychology. The text is intentionally general and should be replaced with verified project descriptions when ready.
+		</p>
+	</section>
 
-    <div class="mb-12">
-      <p class="text-lg mb-6">
-        My research focuses on groundbreaking investigations into radioactivity and the discovery of new radioactive elements. Through meticulous experimental techniques and innovative methodologies, I aim to advance our understanding of radioactive phenomena and their applications in both physics and chemistry.
-      </p>
-      <p class="text-lg mb-6">
-        This interdisciplinary approach has led to significant discoveries, including the isolation of polonium and radium, contributing to the foundation of modern nuclear physics and radiochemistry.
-      </p>
-    </div>
-
-    <h2 class="text-2xl font-bold mb-6">Research Areas</h2>
-    <div class="grid gap-8 mb-12">
-      {
-        research_areas.map((area) => (
-          <div class="flex gap-6 items-start">
-            <BetterIcon>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke-width="2"
-                class="size-6 stroke-accent"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d={RESEARCH_ICONS[area.field as keyof typeof RESEARCH_ICONS]?.path || RESEARCH_ICONS['computer-science'].path}
-                />
-              </svg>
-            </BetterIcon>
-            <div>
-              <h3 class="text-xl font-semibold mb-2">{area.title}</h3>
-              <p class="text-base">{area.description}</p>
-            </div>
-          </div>
-        ))
-      }
-    </div>
-
-    <List listTitle="Current Projects" listItems={[
-      {
-        title: "Radioactivity Studies",
-        description: "Investigation of radioactive properties in uranium minerals and isolation of new radioactive elements."
-      },
-      {
-        title: "Measurement Techniques",
-        description: "Development of precise methods for measuring radioactive emissions and their properties."
-      }
-    ]} />
-
-    <h2 class="text-2xl font-bold mb-6">Research Impact</h2>
-    <p class="text-lg mb-6">
-      My research has opened new frontiers in radioactivity studies, leading to practical applications in both scientific research and medical treatments. The discoveries have revolutionized our understanding of atomic structure and radioactive decay processes.
-    </p>
-  </div>
+	<div class='grid gap-5'>
+		{researchSections.map((section, index) => (
+			<article class='academic-card grid gap-5 lg:grid-cols-[4rem_1fr]'>
+				<div class='text-sm font-semibold text-academic-accent'>0{index + 1}</div>
+				<div>
+					<h2 class='text-2xl font-semibold tracking-tight text-academic-text'>{section.title}</h2>
+					<div class='mt-4 space-y-3 text-[1.02rem] leading-8 text-academic-muted'>
+						{section.description.map((paragraph) => <p>{paragraph}</p>)}
+					</div>
+				</div>
+			</article>
+		))}
+	</div>
 </Layout>

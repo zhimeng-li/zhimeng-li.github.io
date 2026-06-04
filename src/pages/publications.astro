@@ -1,0 +1,41 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import { publications, conferencePresentations, manuscripts } from '@/data/cv'
+
+const sections = [
+	{ title: 'Publications', items: publications, note: 'TODO: Replace with confirmed peer-reviewed publications only.' },
+	{ title: 'Conference presentations', items: conferencePresentations, note: 'TODO: Replace with confirmed talks, posters, or conference presentations.' },
+	{ title: 'Manuscripts in preparation', items: manuscripts, note: 'TODO: Add only manuscript information that is ready to be public.' },
+]
+---
+
+<Layout title='Zhimeng Li | Publications'>
+	<section class='mb-12 max-w-3xl'>
+		<p class='eyebrow'>Publications</p>
+		<h1 class='mt-4 text-4xl font-semibold tracking-[-0.03em] text-academic-text md:text-5xl'>Publications and presentations</h1>
+		<p class='mt-5 text-lg leading-8 text-academic-muted'>
+			This page currently provides a replaceable citation structure only. Placeholder entries are intentionally generic and should be updated with verified author order, year, title, venue, status, and links.
+		</p>
+	</section>
+
+	<div class='space-y-10'>
+		{sections.map((section) => (
+			<section>
+				<div class='flex flex-col gap-2 border-b border-academic-border pb-4 md:flex-row md:items-end md:justify-between'>
+					<h2 class='text-2xl font-semibold tracking-tight text-academic-text'>{section.title}</h2>
+					<p class='text-sm text-academic-muted'>{section.note}</p>
+				</div>
+				<div class='mt-5 space-y-4'>
+					{section.items.map((item) => (
+						<article class='academic-card'>
+							<p class='leading-7 text-academic-text'>
+								{item.authors}. {item.time}. {item.title}. {'journal' in item ? item.journal : 'venue' in item ? `${item.venue}. ${item.status}` : item.status}.
+							</p>
+							<p class='mt-2 text-sm text-academic-muted'>Placeholder entry — replace with a real citation when ready.</p>
+						</article>
+					))}
+				</div>
+			</section>
+		))}
+	</div>
+</Layout>
