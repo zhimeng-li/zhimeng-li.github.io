@@ -1,29 +1,22 @@
 ---
-import { Image } from 'astro:assets'
+import { social } from '@/settings'
 
-import SocialIcons from './SocialIcons.astro'
-
-
-const {fullName, title, institute, profilePicture} = Astro.props
+const { fullName, title, institute } = Astro.props
 ---
-<div class='flex-1'>
-  <h1 class='text-4xl font-bold mb-4'>
-    Welcome! I'm <span class='text-secondary'>{fullName}</span>
-  </h1>
-  <p class='text-xl text-gray-600 mb-4'>{title}{institute ? ` at ${institute}` : ''}</p>
-  <p class='text-lg mb-6'>
-    Brief impactful description of your research focus and academic mission.
-    Highlight your key contributions and areas of expertise.
-  </p>
-  <div class='flex gap-4'>
-    <SocialIcons />
-  </div>
-</div>
-<div class='size-72 lg:block hidden'>
-  <!-- Add your profile image -->
-  <Image
-    src={profilePicture}
-    alt={fullName}
-    class='w-full h-full mask mask-circle size-44'
-  />
-</div>
+
+<section class='hero-panel'>
+	<div class='max-w-4xl'>
+		<p class='eyebrow'>Affective scientist · Social psychologist</p>
+		<h1 class='mt-5 max-w-3xl text-5xl font-semibold leading-[1.05] tracking-[-0.04em] text-academic-text md:text-6xl'>
+			{fullName}
+		</h1>
+		<p class='mt-5 text-xl leading-8 text-academic-muted'>{title} at {institute}</p>
+		<p class='mt-9 max-w-3xl text-xl leading-9 text-academic-text/85'>
+			I am a PhD candidate in Psychology at Yale University. My research examines how people identify and make meaning of emotions, and how body, language, and culture scaffold these processes. I use behavioral experiments, naturalistic video paradigms, computational text analysis, and physiological measures to study emotion perception across contexts.
+		</p>
+		<div class='mt-9 flex flex-wrap items-center gap-4'>
+			<a class='academic-button' href='/research'>Read about research</a>
+			<a class='link-accent text-sm font-medium' href={`mailto:${social.email}`}>{social.email}</a>
+		</div>
+	</div>
+</section>

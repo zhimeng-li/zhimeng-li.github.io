@@ -1,63 +1,63 @@
+// TODO: Replace these first-draft placeholders with verified CV content.
+// Do not add publications, awards, talks, courses, dates, or affiliations here until they are ready to publish.
+
 export const experiences = [
 	{
-		company: '',
-		time: '',
-		title: '',
-		location: '',
-		description: '',
+		company: 'TODO: Add research group, lab, department, or professional affiliation',
+		time: 'TODO: Add dates',
+		title: 'TODO: Add role or appointment title',
+		location: 'TODO: Add location',
+		description: 'Placeholder experience entry. Replace with a concise, factual description of research, teaching, service, or professional responsibilities.',
 	},
-	// {
-	// 	company: 'Radium Institute (Institut du Radium)',
-	// 	time: '1914 - 1934',
-	// 	title: 'Director',
-	// 	location: 'Paris, France',
-	// 	description: 'Led groundbreaking studies on radioactivity and mentored future Nobel Prize laureates.',
-	// },
-];
+]
 
 export const education = [
 	{
-		school: '',
-		time: '',
-		degree: '',
-		location: '',
-		description: '',
+		school: 'Yale University',
+		time: 'TODO: Add dates',
+		degree: 'PhD Candidate in Psychology',
+		location: 'New Haven, CT',
+		description: 'Placeholder education entry. Add dissertation, advisor, committee, and degree dates only when ready to publish.',
 	},
-	// {
-	// 	school: 'University of Paris',
-	// 	time: '1891 - 1895',
-	// 	degree: 'Master’s in Physics and Mathematics',
-	// 	location: 'Paris, France',
-	// 	description: 'Graduated at the top of her class in physics and second in mathematics.',
-	// },
-];
+]
 
 export const skills = [
 	{
-		title: '',
-		description: '',
+		title: 'Research methods',
+		description: 'Placeholder: behavioral experiments, naturalistic video paradigms, computational text analysis, and physiological measures. TODO: refine with specific methods, tools, and competencies.',
 	},
-	// {
-	// 	title: 'Experimental Techniques',
-	// 	description: 'Spectroscopy, Isolation of Radioactive Elements, Radiation Measurement',
-	// },
-];
+	{
+		title: 'Research areas',
+		description: 'Placeholder: emotion, culture, language, social perception, social inference, and empathy. TODO: refine with current project language.',
+	},
+]
 
 export const publications = [
 	{
-		title: '',
-		authors: '',
-		journal: '',
-		time: '',
-		link: '',
-		abstract: '',
+		title: 'Placeholder title',
+		authors: 'Author(s)',
+		journal: 'Placeholder venue/status',
+		time: 'Year',
+		link: '#',
+		abstract: 'Placeholder publication entry. TODO: replace with a real publication only after confirming author order, title, venue, year, and link.',
 	},
-	// {
-	// 	title: 'The Radiation of Uranium Compounds',
-	// 	authors: 'Marie Curie',
-	// 	journal: 'Comptes Rendus de l’Académie des Sciences',
-	// 	time: '1898',
-	// 	link: '#',
-	// 	abstract: 'Early research leading to the identification of uranium’s radioactive properties.',
-	// },
-];
+]
+
+export const conferencePresentations = [
+	{
+		title: 'Placeholder conference presentation title',
+		authors: 'Author(s)',
+		venue: 'Placeholder conference or meeting',
+		time: 'Year',
+		status: 'Placeholder presentation type/status',
+	},
+]
+
+export const manuscripts = [
+	{
+		title: 'Placeholder manuscript title',
+		authors: 'Author(s)',
+		status: 'Manuscript in preparation',
+		time: 'Year',
+	},
+]
