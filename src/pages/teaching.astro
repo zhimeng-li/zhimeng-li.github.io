@@ -1,18 +1,14 @@
 ---
 import Layout from '@/layouts/Layout.astro'
 
-const sections = [
+const teachingExperience = [
 	{
-		title: 'Teaching experience',
-		text: 'Placeholder teaching entry. Replace with verified teaching assistantships, guest lectures, workshops, course roles, terms, and institutions when they are ready to publish.',
+		title: 'Instructor',
+		text: 'Placeholder instructor entry. Replace with verified course titles, terms, institutions, and roles only when they are ready to publish.',
 	},
 	{
-		title: 'Mentoring',
-		text: 'Placeholder mentoring section. Future text can describe mentoring philosophy, general mentoring activities, or opportunities for students without listing private or sensitive student information.',
-	},
-	{
-		title: 'Teaching interests',
-		text: 'Placeholder teaching interests may include broad areas such as emotion, culture, language, social perception, research methods, and social psychology. Replace with a concise, accurate teaching statement when ready.',
+		title: 'Teaching Fellow / TF',
+		text: 'Placeholder Teaching Fellow / TF entry. Replace with confirmed teaching assistantships, course support roles, guest lectures, workshops, terms, and institutions when ready.',
 	},
 ]
 ---
@@ -20,19 +16,40 @@ const sections = [
 <Layout title='Zhimeng Li | Teaching'>
 	<section class='mb-12 max-w-3xl'>
 		<p class='eyebrow'>Teaching</p>
-		<h1 class='mt-4 text-4xl font-semibold tracking-[-0.03em] text-academic-text md:text-5xl'>Teaching and mentoring</h1>
+		<h1 class='mt-4 text-4xl font-semibold tracking-[-0.03em] text-academic-text md:text-5xl'>Teaching</h1>
 		<p class='mt-5 text-lg leading-8 text-academic-muted'>
 			This page is a placeholder for future teaching and mentoring information. Add only confirmed courses, roles, dates, institutions, teaching awards, and mentoring details when ready.
 		</p>
 	</section>
 
-	<div class='grid gap-5'>
-		{sections.map((section) => (
-			<section class='academic-card'>
-				<h2 class='text-2xl font-semibold tracking-tight text-academic-text'>{section.title}</h2>
-				<!-- TODO: Replace with verified teaching or mentoring content. -->
-				<p class='mt-4 leading-8 text-academic-muted'>{section.text}</p>
-			</section>
-		))}
+	<div class='max-w-3xl space-y-10'>
+		<section class='border-t border-academic-border pt-6'>
+			<h2 class='text-2xl font-semibold tracking-tight text-academic-text'>Teaching experience</h2>
+			<div class='mt-5 space-y-6'>
+				{teachingExperience.map((section) => (
+					<div>
+						<h3 class='text-lg font-semibold tracking-tight text-academic-text'>{section.title}</h3>
+						<!-- TODO: Replace with verified teaching content. -->
+						<p class='mt-2 leading-8 text-academic-muted'>{section.text}</p>
+					</div>
+				))}
+			</div>
+		</section>
+
+		<section class='border-t border-academic-border pt-6'>
+			<h2 class='text-2xl font-semibold tracking-tight text-academic-text'>Mentoring</h2>
+			<!-- TODO: Replace with verified mentoring content. -->
+			<p class='mt-4 leading-8 text-academic-muted'>
+				Placeholder mentoring section. Future text can describe mentoring philosophy, general mentoring activities, or opportunities for students without listing private or sensitive student information.
+			</p>
+		</section>
+
+		<section class='border-t border-academic-border pt-6'>
+			<h2 class='text-2xl font-semibold tracking-tight text-academic-text'>Teaching interests</h2>
+			<!-- TODO: Replace with verified teaching-interest content. -->
+			<p class='mt-4 leading-8 text-academic-muted'>
+				Placeholder teaching interests may include broad areas such as emotion, culture, language, social perception, research methods, and social psychology. Replace with a concise, accurate teaching statement when ready.
+			</p>
+		</section>
 	</div>
 </Layout>
