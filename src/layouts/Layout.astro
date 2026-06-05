@@ -43,7 +43,7 @@ const {
 						<div class='navbar-end'></div>
 					</div>
 				</header>
-				<main class='mx-auto flex min-h-screen max-w-6xl flex-col px-5 py-8 md:px-10 lg:px-14 lg:py-14'>
+				<main class='mx-auto flex min-h-screen w-full max-w-5xl flex-col px-5 py-8 md:px-10 lg:px-14 lg:py-14'>
 					<div class='grow'>
 						<slot />
 					</div>
@@ -90,47 +90,24 @@ const {
 	.eyebrow {
 		font-size: 0.78rem;
 		font-weight: 700;
-		letter-spacing: 0.24em;
+		letter-spacing: 0.18em;
 		text-transform: uppercase;
 		color: var(--academic-accent);
 	}
 
-	.hero-panel {
-		border: 1px solid var(--academic-border);
-		border-radius: 2rem;
-		background:
-			linear-gradient(135deg, rgba(255,255,255,0.82), rgba(250,249,246,0.92)),
-			radial-gradient(circle at top right, rgba(40,109,192,0.13), transparent 32rem);
-		padding: clamp(2rem, 5vw, 4rem);
-		box-shadow: 0 24px 70px rgba(31, 41, 51, 0.06);
-	}
-
 	.academic-card {
 		border: 1px solid var(--academic-border);
-		border-radius: 1.25rem;
-		background: rgba(255, 253, 250, 0.78);
-		padding: 1.5rem;
-		box-shadow: 0 12px 36px rgba(31, 41, 51, 0.04);
-	}
-
-	.academic-section {
-		display: grid;
-		gap: 2rem;
-		border-bottom: 1px solid var(--academic-border);
-		padding: 3.5rem 0;
-	}
-
-	@media (min-width: 1024px) {
-		.academic-section {
-			grid-template-columns: 13rem minmax(0, 1fr);
-		}
+		border-radius: 0.25rem;
+		background: rgba(255, 253, 250, 0.42);
+		padding: 1.35rem;
+		box-shadow: none;
 	}
 
 	.academic-button {
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
-		border-radius: 9999px;
+		border-radius: 0.25rem;
 		background: var(--academic-accent);
 		color: white;
 		font-weight: 650;
@@ -140,7 +117,6 @@ const {
 
 	.academic-button:hover {
 		background: var(--academic-accent-dark);
-		transform: translateY(-1px);
 	}
 
 	.prose a,
@@ -154,5 +130,24 @@ const {
 	.prose a:hover,
 	.link-accent:hover {
 		color: var(--academic-accent-dark);
+	}
+
+	.publication-details[open] {
+		flex-basis: 100%;
+	}
+
+	.publication-details summary {
+		list-style: none;
+	}
+
+	.publication-details summary::-webkit-details-marker {
+		display: none;
+	}
+
+	.placeholder-link {
+		color: var(--academic-muted);
+		text-decoration-line: underline;
+		text-decoration-color: rgba(107, 114, 128, 0.28);
+		text-underline-offset: 0.22em;
 	}
 </style>

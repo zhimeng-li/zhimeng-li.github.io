@@ -1,73 +1,24 @@
 ---
 import Layout from '../layouts/Layout.astro'
-import { profile } from '@/settings'
-import Hero from '@/components/ui/Hero.astro'
-
-const { fullName, title, institute } = profile
-
-const interests = [
-	'How people identify and segment emotion in unfolding social behavior.',
-	'How culture and language shape emotion concepts and social inference.',
-	'How empathy supports understanding across social and cultural boundaries.',
-	'How behavioral, textual, video-based, and physiological methods can be combined in affective science.',
-]
-
-const projects = [
-	{
-		title: 'Emotion perception in context',
-		text: 'Draft placeholder for a project area on how people make sense of emotional behavior in naturalistic contexts. Replace with a specific project summary once the scope, collaborators, and public-facing details are confirmed.',
-	},
-	{
-		title: 'Language, concepts, and social inference',
-		text: 'Draft placeholder for work connecting emotion language, cultural knowledge, and the inferences people draw about others. This should remain general until verified study details are ready to share.',
-	},
-]
 
 const updates = [
 	'TODO: Add a dated update when a publication, presentation, or website milestone is ready to announce.',
-	'TODO: Add future news items only after details are confirmed for public sharing.',
+	'TODO: Add future news items after details are confirmed for public sharing.',
 ]
 ---
 
 <Layout title='Zhimeng Li | Home'>
-	<Hero fullName={fullName} title={title} institute={institute} />
-
-	<section class='academic-section'>
-		<div>
-			<p class='eyebrow'>Research interests</p>
-		</div>
-		<div class='grid gap-4 md:grid-cols-2'>
-			{interests.map((interest) => (
-				<div class='academic-card text-[1.02rem] leading-7 text-academic-text/80'>{interest}</div>
-			))}
-		</div>
+	<section class='max-w-3xl pt-4 md:pt-10'>
+		<p class='text-[1.08rem] leading-8 text-academic-text/90 md:text-lg md:leading-9'>
+			I am a PhD candidate in Psychology at Yale University, working with <a class='link-accent' href='https://www.mariagendronphd.com/'>Dr. Maria Gendron</a> in the <a class='link-accent' href='https://asclab.yale.edu/'>Affective Science and Culture Lab</a>. My research examines how people identify and make meaning of emotions, and how body, language, and culture scaffold these processes. I use behavioral experiments, naturalistic video paradigms, computational text analysis, and physiological measures to study emotion perception across contexts. Previously, I obtained a BA in Psychology and Comparative Literature from Cornell University, where I worked with <a class='link-accent' href='https://lauraniemi.com/'>Dr. Laura Niemi</a>, <a class='link-accent' href='https://blogs.cornell.edu/paclab/'>Dr. Vivian Zayas</a>, and <a class='link-accent' href='https://www.aclab.human.cornell.edu/People.html'>Dr. Adam Anderson</a>.
+		</p>
 	</section>
 
-	<section class='academic-section'>
-		<div>
-			<p class='eyebrow'>Selected projects</p>
-			<p class='mt-3 text-sm leading-6 text-academic-muted'>First-draft placeholders to be replaced with confirmed project descriptions.</p>
-		</div>
-		<div class='space-y-5'>
-			<!-- TODO: Replace draft project placeholders with real project titles and descriptions when ready. -->
-			{projects.map((project) => (
-				<article class='academic-card'>
-					<h2 class='text-xl font-semibold tracking-tight text-academic-text'>{project.title}</h2>
-					<p class='mt-3 leading-8 text-academic-muted'>{project.text}</p>
-				</article>
-			))}
-		</div>
-	</section>
-
-	<section class='grid gap-8 py-14 lg:grid-cols-[13rem_1fr]'>
-		<div>
-			<p class='eyebrow'>Recent updates</p>
-		</div>
-		<div class='academic-card border-dashed'>
-			<!-- TODO: Replace with dated, verified updates. -->
-			<ul class='space-y-3 text-academic-muted'>
-				{updates.map((update) => <li class='leading-7'>{update}</li>)}
-			</ul>
-		</div>
+	<section class='mt-14 max-w-3xl border-t border-academic-border pt-8'>
+		<h2 class='text-xl font-semibold tracking-tight text-academic-text'>Updates</h2>
+		<!-- TODO: Replace with dated, verified updates. -->
+		<ul class='mt-5 list-disc space-y-3 pl-5 text-academic-muted marker:text-academic-accent/70'>
+			{updates.map((update) => <li class='leading-7'>{update}</li>)}
+		</ul>
 	</section>
 </Layout>
