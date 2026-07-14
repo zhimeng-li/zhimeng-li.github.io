@@ -46,8 +46,8 @@ export const manuscripts: PublicationEntry[] = [
 	{
 		title: 'Semantic Modelling of Internal Concepts Captures Individual Differences in Emotion Recognition',
 		authors: 'Gu, D., Binetti, N., Li, Z., Gendron, M., & Mareschal, I.',
-		year: 'in prep',
-		status: 'in prep',
+		year: 'under review',
+		status: 'under review',
 	},
 	{
 		title: 'Development and Validation of the Cross-cultural Mental States Inference scale (CCMSI)',
